@@ -1,0 +1,20 @@
+a
+{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+body
+{
+    background: rgb(175, 222, 223);
+}
+a:hover
+{
+    /* background-color: yellow; */
+    text-shadow: 3px 3px 3px red;
+    font-size: 24px;
+    font-family: cooper;
+    font-kerning: auto;
+    font-stretch: extra-expanded;
+    font-style: oblique;
+    letter-spacing: 4px;    
+}
