@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <title>Document</title>
+    <title>Login</title>
 
     <link rel="stylesheet" href="login.css">
 </head>
@@ -23,7 +23,7 @@
           <div class="content">
            
             <!-- form start -->
-            <form action="home.html">
+            <form onsubmit="login()">
 
                     <!-- <h1>Login</h1> -->
         
@@ -31,12 +31,12 @@
         
                     <div class="form-group">
                             <label for="email">Email <sup>*</sup></label>
-                            <input class="form-control" type="email" name="email" id="email" autofocus placeholder="Enter email address" required>
+                            <input class="form-control" type="email" name="email" id="email" autofocus placeholder="Enter email address" >
                     </div>
                    
                     <div class="form-group">
-                            <label for="psw">Password <sup>*</sup></label>
-                            <input class="form-control" type="password" name="psw" id="psw" placeholder="Enter password" required>
+                            <label for="password">Password <sup>*</sup></label>
+                            <input class="form-control" type="password" name="password" id="password" placeholder="Enter password" >
                     </div>
         
                     <div class="text-center">
@@ -45,8 +45,13 @@
                     </div>
                     <div class="text-center">
                         <button class="btn" type="submit">Login</button>
+                        <!-- <a href="home.html"><button class="btn skip">Skip</button></a> -->
                     </div>
-                  
+
+                    <div class="text-center">
+                            <a href="" class="forgot">Forgot password?</a> <span><a class="forgot" href="register.html">Register</a></span>
+                    </div>
+
                 </form>
             <!-- form end -->
           </div>
@@ -54,6 +59,43 @@
           
     <!-- video end -->     
         
+
+    <!-- script start -->
+          <script>
+              function login()
+              {
+                  event.preventDefault();
+
+                  const email = document.querySelector("#email").value;
+                  const password = document.querySelector("#password").value;
+
+                  console.log(email);
+                  console.log(password);
+
+                  if(email == null || email == "" || email.trim == "" || email == undefined)
+                  {
+                      alert("Invalid Email Address");
+                  }
+                  if(password == null || password == "" || password.trim == "" || password == undefined)
+                  {
+                      alert("Invalid Password");
+                  }
+                  if(password.length >= 6 || password.length <= 8)
+                  {
+                      alert("Password minimum 6 to 8 digits");
+                  }
+
+                  const logindata = 
+                  {
+                      "email" : email.toLowerCase(),
+                      "password" : password
+                  }
+                  console.log("login data", logindata);
+                  alert("")
+                  window.location.href("home.html");
+              }
+          </script>
+    <!-- script end -->
 
               
 </body>

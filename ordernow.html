@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="ordernow.css">
+</head>
+<body>
+    
+    <header id="header"></header>
+
+<!-- order form start -->
+
+<div>
+    <form>
+        <div>
+            <label for="email" disabled></label>
+        </div>
+
+        <div>
+            <select name="category" id="category">
+                <option value="fruits">Fruits</option>
+                <option value="cookies">Cookies</option>
+                <option value="softdrinks">Soft Drinks</option>
+                <option value="vegetables">Vegetables</option>
+                <option value="dryfruits">Dry Fruits</option>
+                <option value="spicychips">Spicy Chips</option>
+                <option value="vegetableoils">Vegetable Oils</option>
+            </select>
+        </div>
+    </form>
+</div>
+<!-- order form end -->
+
+
+
+    <!-- footer append -->
+    <footer id="footer"></footer>
+
+    <script src="./jquery.min.js"></script>
+    <script>
+        $("#header").load("_header.html");
+    </script>
+
+    <script>
+        $("footer").load("_footer.html");
+    </script>
+</body>
+</html>

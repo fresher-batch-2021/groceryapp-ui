@@ -18,3 +18,9 @@ a:hover
     font-style: oblique;
     letter-spacing: 4px;    
 }
+header
+{
+    text-align: center;
+    font-size: 40px;
+    font: bolder;
+}

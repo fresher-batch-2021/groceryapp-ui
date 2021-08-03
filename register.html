@@ -23,7 +23,7 @@
 <div class="content">
   <!-- login copy -->
 
-        <form action="login.html">
+        <form onsubmit="register()">
 
             <!-- <h1>Login</h1> -->
 
@@ -36,7 +36,7 @@
 
             <div class="form-group">
                 <label for="phone">Phone No <sup>*</sup></label>
-                <input class="form-control" type="number" name="phone" id="phone" placeholder="Enter phone no" required>
+                <input class="form-control" type="tel" name="phoneno" id="phoneno" placeholder="Enter phone no" required maxlength="10" minlength="10">
             </div>
 
             <div class="form-group">
@@ -46,8 +46,8 @@
            
             <div class="form-group">
                     <label for="psw">Password <sup>*</sup></label>
-                    <input class="form-control" type="password" name="psw" id="psw" placeholder="Enter password" required>
-            </div>
+                    <input class="form-control" type="password" name="password" id="password" placeholder="Enter password" >
+            </div>  
 
             <div class="text-center">
                 <label for="remember">Remember</label>
@@ -57,9 +57,62 @@
                 <button class="btn" type="submit">Register</button>
             </div>
           
+            <div class="text-center">
+                <a class="log" href="login.html">Login</a> <span><a class="log" href="home.html">Skip</a></span>
+            </div>
         </form>
   <!-- login copy end -->
 </div>
+
+
+
+<!-- script files start -->
+
+<script>
+    function register()
+    {
+        event.preventDefault();
+
+        const username = document.querySelector("#username").value;
+        const phoneno = document.querySelector("#phoneno").value;
+        const email = document.querySelector("#email").value;
+        const password = document.querySelector("#password").value;
+
+        if(username == null || username == "" || username.trim == "" || username == undefined)
+        {
+            alert("Invalid Username");
+        }
+        if(phoneno == null || phoneno == "" || phoneno.trim == "" || phoneno == undefined)
+        {
+            alert("Invalid Phone number");
+        }
+        if(email == null || email == "" || email.trim == "" || email == undefined)
+        {
+            alert("Invalid E-mail address");
+        }
+        if(password == null || password == "" || password.trim == "" || password == undefined)
+        {
+            alert("Invalid password");
+        }
+        if(password.length >= 6 || password.length <= 8)
+        {
+            alert("Password minimum 6 to 8 digits");
+        }
+
+        let registerobj = 
+        {
+            "username" : username,
+            "phoneno" : phoneno,
+            "email" : email.toLowerCase(),
+            "password" : password
+        };
+
+        console.log(registerobj);
+        alert("Registration Successfull");
+        window.location.href = "login.html";
+    }
+</script>
+<!-- script file end -->
 
 
 
