@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Order Now</title>
 
     <link rel="stylesheet" href="ordernow.css">
 </head>
@@ -16,25 +16,29 @@
 
 <!-- order form start -->
 
-<div>
-    <form>
-        <div>
-            <label for="email" disabled></label>
-        </div>
+    <center>
+            <div>
+                <h3>Order Now</h3>
+                        <div>
+                            <label id="email"></label>
+                        </div>
 
-        <div>
-            <select name="category" id="category">
-                <option value="fruits">Fruits</option>
-                <option value="cookies">Cookies</option>
-                <option value="softdrinks">Soft Drinks</option>
-                <option value="vegetables">Vegetables</option>
-                <option value="dryfruits">Dry Fruits</option>
-                <option value="spicychips">Spicy Chips</option>
-                <option value="vegetableoils">Vegetable Oils</option>
-            </select>
-        </div>
-    </form>
-</div>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>S.no</th>
+                                <th>Product</th>
+                                <th>Qty</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody  id="table">
+                           
+                        </tbody>
+                    </table>
+                    <button class="btn btn-primary" type="submit">Confirm Order</button>
+                </div>
+    </center>
 <!-- order form end -->
 
 
@@ -50,5 +54,64 @@
     <script>
         $("footer").load("_footer.html");
     </script>
+
+    <script>
+        let emailadd = localStorage.getItem("emailaddress");
+        document.querySelector("#email").innerHTML = emailadd;
+    </script>
+
+
+    <!-- table array script start -->
+    
+    <script>
+        function tabledatas()
+        {
+            let addcart = JSON.parse(localStorage.getItem("CART_ITEMS"))  || [];
+            //[
+            //{sno: 1, product: "Tomato", qty: 1, price: 30},
+            //{sno: 2, product: "Onion", qty: 1, price: 45}
+        //];
+
+        let tablearr = "";
+
+        let i=0;
+        
+        for(let addcartobj of addcart)
+        {
+            tablearr =tablearr +  "<tr><td>"+ (++i) +"</td><td>"+addcartobj.product +"</td><td>"+ addcartobj.qty +"</td><td>"+ addcartobj.price +"</td></tr>";
+        }
+
+        document.querySelector("#table").innerHTML = tablearr;
+
+        console.table(tablearr);
+        }
+        
+        
+    </script>
+
+    <script>
+
+// https://www.sitepoint.com/get-url-parameters-with-javascript/         reference for windows location search
+
+        window.location.search;
+        window.location.search.substr(1);
+        const params = new URLSearchParams(window.location.search.substr(1));
+        let addpro = params.get("productName");
+        let addQty = params.get("Kg");
+        let addPrice = params.get("price");
+        console.log(addpro);
+        console.log(addQty)
+        console.log(addPrice);
+
+        let addtablearray =  { product: addpro, qty: addQty, price: addPrice};
+        console.log(addtablearray);
+        const cartItems = JSON.parse(localStorage.getItem("CART_ITEMS")) || [];
+        cartItems.push(addtablearray);
+        localStorage.setItem("CART_ITEMS", JSON.stringify(cartItems));
+        tabledatas();
+
+    </script>
+
+    <!-- table array script end -->
 </body>
 </html>
