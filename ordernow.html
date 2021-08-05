@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Order Now</title>
@@ -16,8 +16,7 @@
 
 <!-- order form start -->
 
-    <center>
-            <div>
+            <div class="text-center">
                 <h3>Order Now</h3>
                         <div>
                             <label id="email"></label>
@@ -26,19 +25,18 @@
                     <table border="1">
                         <thead>
                             <tr>
-                                <th>S.no</th>
-                                <th>Product</th>
-                                <th>Qty</th>
-                                <th>Price</th>
+                                <th scope="col">S.no</th>
+                                <th scope="col">Product</th>
+                                <th scope="col">Qty</th>
+                                <th scope="col">Price</th>
                             </tr>
                         </thead>
                         <tbody  id="table">
                            
                         </tbody>
                     </table>
-                    <button class="btn btn-primary" type="submit">Confirm Order</button>
+                    <button class="btn btn-primary" onclick="confirmOrder()" type="submit">Confirm Order</button>
                 </div>
-    </center>
 <!-- order form end -->
 
 
@@ -91,13 +89,12 @@
 
     <script>
 
-// https://www.sitepoint.com/get-url-parameters-with-javascript/         reference for windows location search
 
         window.location.search;
         window.location.search.substr(1);
         const params = new URLSearchParams(window.location.search.substr(1));
         let addpro = params.get("productName");
-        let addQty = params.get("Kg");
+        let addQty = params.get("Kg") || params.get("Ltr");
         let addPrice = params.get("price");
         console.log(addpro);
         console.log(addQty)
@@ -110,6 +107,22 @@
         localStorage.setItem("CART_ITEMS", JSON.stringify(cartItems));
         tabledatas();
 
+    </script>
+
+    <script>
+        function confirmOrder()
+        {
+         if(emailadd == "" || emailadd == null || emailadd == undefined)
+         {
+            alert("Please Register or Login");
+         }   
+         else
+         {
+            alert("Ordered Successfully");
+            document.location.reload(true);
+            window.localStorage.clear(true);
+         }
+        }
     </script>
 
     <!-- table array script end -->

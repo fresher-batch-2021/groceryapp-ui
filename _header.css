@@ -12,7 +12,6 @@
 {
     font-size: 24px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font: bolder;
 }
 #liname
 {
@@ -23,7 +22,6 @@
 #liname:hover
 {
     font-size: 18px;
-    font: bolder;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 *

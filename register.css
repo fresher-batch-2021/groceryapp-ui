@@ -4,7 +4,6 @@
   
   body {
     margin: 0;
-    font-family: Arial;
     font-size: 17px;
   }
   
@@ -62,7 +61,8 @@ form
     background: white;
     margin-left: 38%;
     margin-right: 38%;
-    margin-top: 180px;
+    /* margin-top: 0 auto;
+    margin-bottom: 0 auto; */
     border-radius: 20px;
     /* padding-bottom: 40px; */
 }

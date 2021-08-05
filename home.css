@@ -58,4 +58,6 @@
 .add:hover
 {
     background: slategray;
+    color: white;
+    text-decoration: none;
 }
