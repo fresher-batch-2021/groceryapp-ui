@@ -17,8 +17,9 @@
 <body>
     
 
-<video autoplay muted loop id="myVideo">
+<video autoplay muted loop id="myVideo" preload="metadata">
   <source src="./video/loginvideo.mp4" type="video/mp4">
+  <source src="./video/loginvideo.webm" type="video/webm">
   Your browser does not support HTML5 video.
 </video>
 
@@ -45,19 +46,15 @@
            
             <div class="form-group">
                     <label for="psw">Password <sup>*</sup></label>
-                    <input class="form-control" type="password" name="password" id="password" placeholder="Enter password" autocomplete="off">
+                    <input class="form-control" type="password" name="password" id="password" placeholder="Enter password" autocomplete="off" minlength="6" maxlength="8">
             </div>  
 
-            <div class="text-center">
-                <label for="remember">Remember</label>
-                <input type="checkbox" name="remember" id="remember">
-            </div>
-            <div class="text-center">
+            <div class="text-center reg">
                 <button class="btn" type="submit">Register</button>
             </div>
           
             <div class="text-center">
-                <a class="log" href="login.html">Login</a> <span><a class="log" href="home.html">Skip</a></span>
+                <a class="log" href="login.html">Login</a> &nbsp; <span><a class="log" href="home.html">Skip</a></span>
             </div>
         </form>
 </div>

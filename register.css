@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
   
   body {
@@ -48,6 +49,7 @@ form
     margin-left: 38%;
     margin-right: 38%;
     border-radius: 20px;
+    margin-bottom: 20px;
 }
 label
 {
@@ -79,4 +81,8 @@ sup
 .log
 {
     font-size: 14px;
+}
+.reg
+{
+    margin-top: 15px;
 }

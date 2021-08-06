@@ -27,7 +27,7 @@ form
 }
 label
 {
-    padding-top: 20px;
+    padding-top: 30px;
     color: #B4D233;
 }
 .btn
@@ -103,4 +103,8 @@ sup
 .forgot
 {
     text-decoration: none;
+}
+*
+{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }

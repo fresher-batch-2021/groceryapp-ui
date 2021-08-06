@@ -14,8 +14,9 @@
 </head>
 <body>
  
-    <video autoplay muted loop id="myVideo">
+    <video autoplay muted loop id="myVideo" preload="metadata">
             <source src="./video/logvideo.mp4" type="video/mp4">
+            <source src="./video/logvideo.webm" type="video/webm">
             Your browser does not support HTML5 video.
           </video>
           
@@ -43,13 +44,15 @@
                         <button class="btn" type="submit">Login</button>
                     </div>
 
-                    <div class="text-center">
-                            <a href="" class="forgot">Forgot password?</a> <span><a class="forgot" href="register.html">Register</a></span>
+                    <div class="text-center reg">
+                        <span><a class="forgot" href="register.html">Register</a></span> &nbsp; &nbsp; <a href="home.html" class="forgot">Skip</a> 
                     </div>
 
                 </form>
           </div>
                    
+
+
           <script>
               function login()
               {
@@ -57,19 +60,21 @@
 
                   const email = document.querySelector("#email").value;
                   const password = document.querySelector("#password").value;
+                  let rem = document.querySelector("#remember").checked;
 
+                  console.log("rem",rem);                  
                   console.log(email);
                   console.log(password);
 
-                  if(email == null || email == "" || email.trim == "" || email == undefined)
+                  if(email == null || email == "" || email.trim == "" || email == undefined )
                   {
-                      alert("Invalid Email Address");
+                      alert("Enter email address");
                   }
-                  if(password == null || password == "" || password.trim == "" || password == undefined)
+                  else if(password == null || password == "" || password.trim == "" || password == undefined)
                   {
-                      alert("Invalid Password");
+                      alert("Enter password");
                   }
-                  if(password.length >= 6 && password.length <= 8)
+                  else if(password == "Pass@123" && email == "tamil@123")
                   {
                     window.location.href="home.html";
                     alert("Login Successfully");
@@ -77,15 +82,16 @@
                     const logindata = 
                   {
                       "email" : email.toLowerCase(),
-                      "password" : password
+                      "password" : password,
+                      "remember" : rem
                   }
                   console.log("login data", logindata);
-
                   }
                   else
                   {
-                    alert("Password minimum 6 to 8 digits");
+                    alert("Invalid email or password");
                   }
+                  
 
 
               }
