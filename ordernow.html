@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Order Now</title>
 
@@ -13,8 +11,6 @@
 <body>
     
     <header id="header"></header>
-
-<!-- order form start -->
 
             <div class="text-center">
                 <h3>Order Now</h3>
@@ -37,11 +33,8 @@
                     </table>
                     <button class="btn btn-primary" onclick="confirmOrder()" type="submit">Confirm Order</button>
                 </div>
-<!-- order form end -->
 
 
-
-    <!-- footer append -->
     <footer id="footer"></footer>
 
     <script src="./jquery.min.js"></script>
@@ -58,17 +51,11 @@
         document.querySelector("#email").innerHTML = emailadd;
     </script>
 
-
-    <!-- table array script start -->
     
     <script>
         function tabledatas()
         {
             let addcart = JSON.parse(localStorage.getItem("CART_ITEMS"))  || [];
-            //[
-            //{sno: 1, product: "Tomato", qty: 1, price: 30},
-            //{sno: 2, product: "Onion", qty: 1, price: 45}
-        //];
 
         let tablearr = "";
 
@@ -125,6 +112,5 @@
         }
     </script>
 
-    <!-- table array script end -->
 </body>
 </html>

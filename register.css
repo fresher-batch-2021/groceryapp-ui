@@ -18,15 +18,11 @@
   .content {
     position: fixed;
     bottom: 0;
-    /* background: rgba(0, 0, 0, 0.5); */
     color: #f1f1f1;
     width: 100%;
     padding: 20px;
     margin-bottom: 20px;
   }
-
-
-/* login copy start */
 .form-group
 {
     margin: auto;
@@ -40,7 +36,6 @@ h1
     text-align: center;
     color: rgb(7, 7, 7);
     padding-top: 30px;
-    /* padding-bottom: 30px; */
 }
 .text-center
 {
@@ -52,10 +47,7 @@ form
     background: white;
     margin-left: 38%;
     margin-right: 38%;
-    /* margin-top: 0 auto;
-    margin-bottom: 0 auto; */
     border-radius: 20px;
-    /* padding-bottom: 40px; */
 }
 label
 {
@@ -76,8 +68,6 @@ img
 }
 .form-control
 {
-    /* border: none; */
-    /* border-width: 0px; */
     border-bottom-left-radius: 10px;
     border-top-right-radius: 10px;
     border-color: #B4D233;
@@ -86,7 +76,6 @@ sup
 {
     color: red;
 }
-/* login end */
 .log
 {
     font-size: 14px;
