@@ -9,22 +9,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Login</title>
-
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <script src="assets/js/login.js"></script>
 </head>
 <body>
  
     <video autoplay muted loop id="myVideo" preload="metadata">
-            <source src="./video/logvideo.mp4" type="video/mp4">
-            <source src="./video/logvideo.webm" type="video/webm">
+            <source src="assets/video/logvideo.mp4" type="video/mp4">
+            <source src="assets/video/logvideo.webm" type="video/webm">
             Your browser does not support HTML5 video.
           </video>
           
           <div class="content">
-           
+           <main>
             <form onsubmit="login()">
         
-                    <img src="./images/logo/deplogo.png" alt="logo" width="60%" height="60%">
+                    <img src="assets/images/logo/deplogo.png" alt="logo" width="60%" height="60%">
         
                     <div class="form-group">
                             <label for="email">Email <sup>*</sup></label>
@@ -40,6 +40,7 @@
                         <label for="remember">Remember</label>
                         <input type="checkbox" name="remember" id="remember">
                     </div>
+
                     <div class="text-center">
                         <button class="btn" type="submit">Login</button>
                     </div>
@@ -49,53 +50,7 @@
                     </div>
 
                 </form>
-          </div>
-                   
-
-
-          <script>
-              function login()
-              {
-                  event.preventDefault();
-
-                  const email = document.querySelector("#email").value;
-                  const password = document.querySelector("#password").value;
-                  let rem = document.querySelector("#remember").checked;
-
-                  console.log("rem",rem);                  
-                  console.log(email);
-                  console.log(password);
-
-                  if(email == null || email == "" || email.trim == "" || email == undefined )
-                  {
-                      alert("Enter email address");
-                  }
-                  else if(password == null || password == "" || password.trim == "" || password == undefined)
-                  {
-                      alert("Enter password");
-                  }
-                  else if(password == "Pass@123" && email == "tamil@123")
-                  {
-                    window.location.href="home.html";
-                    alert("Login Successfully");
-                    localStorage.setItem("emailaddress",email.toLowerCase());
-                    const logindata = 
-                  {
-                      "email" : email.toLowerCase(),
-                      "password" : password,
-                      "remember" : rem
-                  }
-                  console.log("login data", logindata);
-                  }
-                  else
-                  {
-                    alert("Invalid email or password");
-                  }
-                  
-
-
-              }
-          </script>
-              
+            </main>
+          </div>                               
 </body>
 </html>
