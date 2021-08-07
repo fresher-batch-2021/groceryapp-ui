@@ -10,17 +10,17 @@ function login()
     console.log(email);
     console.log(password);
 
-    if(email == null || email == "" || email.trim == "" || email == undefined )
+    if(email === null || email === "" || email.trim === "" || email === undefined )
     {
         alert("Enter email address");
     }
-    else if(password == null || password == "" || password.trim == "" || password == undefined)
+    else if(password === null || password === "" || password.trim === "" || password === undefined)
     {
         alert("Enter password");
     }
-    else if(password == "Pass@123" && email == "tamil@123")
+    else if(password === "Pass@123" && email === "tamil@123")
     {
-      window.location.href="home.html";
+      window.location.href = "home.html";
       alert("Login Successfully");
       localStorage.setItem("emailaddress",email.toLowerCase());
       const logindata = 

@@ -46,14 +46,13 @@ tabledatas();
 
 function confirmOrder()
 {
- if(emailadd == "" || emailadd == null || emailadd == undefined)
+ if(emailadd === "" || emailadd === null || emailadd === undefined)
  {
     alert("Please Register or Login");
  }   
  else
  {
     alert("Ordered Successfully");
-    document.location.reload(true);
     window.localStorage.clear(true);
  }
 }
