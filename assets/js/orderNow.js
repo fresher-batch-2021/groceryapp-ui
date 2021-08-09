@@ -26,8 +26,7 @@ console.table(tablearr);
 
 
 
-window.location.search;
-window.location.search.substr(1);
+
 const params = new URLSearchParams(window.location.search.substr(1));
 let addpro = params.get("productName");
 let addQty = params.get("Kg") || params.get("Ltr");
@@ -38,8 +37,8 @@ console.log(addPrice);
 
 let addtablearray =  { product: addpro, qty: addQty, price: addPrice};
 console.log(addtablearray);
-const cartItems = JSON.parse(localStorage.getItem("CART_ITEMS")) || [];
 cartItems.push(addtablearray);
+const cartItems = JSON.parse(localStorage.getItem("CART_ITEMS")) || [];
 localStorage.setItem("CART_ITEMS", JSON.stringify(cartItems));
 tabledatas();
 
