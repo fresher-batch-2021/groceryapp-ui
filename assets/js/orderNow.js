@@ -25,7 +25,7 @@ console.table(tablearr);
 
 
 
-
+console.log("url", window.location.search);
 
 const params = new URLSearchParams(window.location.search.substr(1));
 let addpro = params.get("productName");
@@ -35,12 +35,21 @@ console.log(addpro);
 console.log(addQty)
 console.log(addPrice);
 
-let addtablearray =  { product: addpro, qty: addQty, price: addPrice};
-console.log(addtablearray);
-cartItems.push(addtablearray);
-const cartItems = JSON.parse(localStorage.getItem("CART_ITEMS")) || [];
-localStorage.setItem("CART_ITEMS", JSON.stringify(cartItems));
-tabledatas();
+if(addpro != null && addQty != null && addPrice != null)
+{
+    let addtablearray =  { product: addpro, qty: addQty, price: addPrice};
+    console.log(addtablearray);
+    cartItems.push(addtablearray);
+    const cartItems = JSON.parse(localStorage.getItem("CART_ITEMS")) || [];
+    localStorage.setItem("CART_ITEMS", JSON.stringify(cartItems));
+    tabledatas();
+    alert("if");
+}
+else
+{
+    alert("else");
+}
+
 
 
 function confirmOrder()
