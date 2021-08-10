@@ -60,9 +60,10 @@ function getProducts()
 }
 getProducts();
 
-function addToCart(productName, price){
+function addToCart(productName, price, qty=1){
     //alert(productName + "-" + price);
-    let itemObj =  { product: productName, qty: 1, price: price};
+    let totalPrice = qty * price;
+    let itemObj =  { product: productName, qty: qty, price: price, totalPrice: totalPrice};
         console.log(itemObj);
         const cartItems = JSON.parse(localStorage.getItem("CART_ITEMS")) || [];
         console.log(cartItems);

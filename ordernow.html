@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Order Now</title>
     <link rel="stylesheet" href="assets/css/ordernow.css">
+
+    <script src="assets/js/cartService.js"></script>
 </head>
 <body>
     
@@ -24,6 +26,7 @@
                                 <th scope="col">Product</th>
                                 <th scope="col">Qty</th>
                                 <th scope="col">Price</th>
+                                <th scope="col">TotalPrice</th>
                             </tr>
                         </thead>
                         <tbody  id="table">
@@ -66,7 +69,7 @@
             if(addcartobj.product != null && addcartobj.qty != null && addcartobj.price != null)
             {
                 // tablearr =tablearr +  "<tr><td>"+ (++i) +"</td><td>"+addcartobj.product +"</td><td>"+ addcartobj.qty +"</td><td>"+ addcartobj.price +"</td></tr>";
-                tablearr = tablearr + `<tr><td>${++i}</td><td>${addcartobj.product}</td><td>${addcartobj.qty}</td><td>${addcartobj.price}</td></tr>`;
+                tablearr = tablearr + `<tr><td>${++i}</td><td>${addcartobj.product}</td><td><input min="1" id = "qty_${addcartobj.product}" type="number" maxlength="5" onchange="addItemToCart('${addcartobj.product}',${addcartobj.price})" value="${addcartobj.qty}"></td><td>${addcartobj.price}</td><td>${addcartobj.totalPrice}</td></tr>`;
             }
         }
 
@@ -76,6 +79,19 @@
         }
         
         tabledatas();
+
+
+        function addItemToCart(productName, price){
+            let qty = parseInt(document.querySelector("#qty_" + productName).value);
+            console.log("Entered qty:"+ qty);
+            if(qty > 0){
+            cartObj.addItem(productName,  price, qty);
+            tabledatas();
+            }
+            else{
+                alert("Invalid Qty");
+            }
+        }
 
     </script>
 
