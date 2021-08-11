@@ -5,7 +5,7 @@ function register() {
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
 
-    if (username === null || username === "" || username.trim()() === "" || username === undefined) {
+    if (username === null || username === "" || username.trim() === "" || username === undefined) {
         alert("Enter Username");
     }
     else if (phoneno === null || phoneno === "" || phoneno.trim() === "" || phoneno === undefined) {
