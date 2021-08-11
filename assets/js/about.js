@@ -1,5 +1,5 @@
 var blink = document.getElementById('thank');
-setInterval(function() {
+setInterval(function () {
     blink.style.opacity = (blink.style.opacity == 0 ? 1 : 0);
 }, 500);
 
