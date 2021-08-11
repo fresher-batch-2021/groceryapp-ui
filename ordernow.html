@@ -75,7 +75,7 @@
 
         document.querySelector("#table").innerHTML = tablearr;
 
-        console.table(tablearr);
+        // console.table(tablearr);
         }
         
         tabledatas();
@@ -102,6 +102,7 @@
          if(emailadd === "" || emailadd === null || emailadd === undefined)
          {
             alert("Please Register or Login");
+            window.location.href = "register.html";
          }   
          else
          {
