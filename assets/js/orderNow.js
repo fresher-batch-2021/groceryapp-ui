@@ -57,6 +57,7 @@ function confirmOrder()
  if(emailadd === "" || emailadd === null || emailadd === undefined)
  {
     alert("Please Register or Login");
+    window.location.href = "register.html";
  }   
  else
  {
