@@ -17,10 +17,10 @@ class CartService {
         localStorage.setItem("CART_ITEMS", JSON.stringify(cartItems));
     }
 
-    addItem(productName, price, qty = 1) {
-        console.log("Adding item :" + productName);
+    addItem(sno, price, qty = 1) {
+        console.log("Adding item :" + sno);
         let cartItems = this.getItems();
-        let index = cartItems.findIndex(obj => obj.product == productName);
+        let index = cartItems.findIndex(obj => obj.sno == sno);
         console.log(index);
         let productObj;
 

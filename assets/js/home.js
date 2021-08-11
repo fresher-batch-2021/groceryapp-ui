@@ -1,10 +1,10 @@
 $("#header").load("_header.html");
 $("#footer").load("_footer.html");
 
-function addToCart(productName, price, qty = 1) {
+function addToCart(id, productName, price, qty = 1) {
     alert("product added");
     let totalPrice = qty * price;
-    let itemObj = { product: productName, qty: qty, price: price, totalPrice: totalPrice };
+    let itemObj = { sno: id, product: productName, qty: qty, price: price, totalPrice: totalPrice };
     console.log(itemObj);
     const cartItems = JSON.parse(localStorage.getItem("CART_ITEMS")) || [];
     console.log(cartItems);
@@ -46,7 +46,7 @@ function loadProducts() {
                         <p>${item.unit} ${item.type} -
                             <i class="fas fa-rupee-sign" aria-hidden="true"></i> ${item.price}
                             </p>
-                        <a class="add" onclick="addToCart('${item.productName}', ${item.price})" >Add</a>
+                        <a class="add" onclick="addToCart(${item.id}, '${item.productName}', ${item.price})" >Add</a>
                     </div>`;
             }
 
