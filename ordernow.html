@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,35 +10,36 @@
 
     <script src="assets/js/cartService.js"></script>
 </head>
+
 <body>
-    
+
     <header id="header"></header>
 
-            <div class="text-center">
-                <h3>Order Now</h3>
-                        <div>
-                            <label id="email"></label>
-                        </div>
+    <div class="text-center">
+        <h3>Order Now</h3>
+        <div>
+            <label id="email"></label>
+        </div>
 
-                    <table border="1" aria-describedby="mydesc">
-                        <thead>
-                            <tr>
-                                <th scope="col">S.no</th>
-                                <th scope="col">Product</th>
-                                <th scope="col">Qty</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">TotalPrice</th>
-                            </tr>
-                        </thead>
-                        <tbody  id="table">
-                           
-                        </tbody>
-                    </table>
-                    <button class="btn btn-primary" onclick="confirmOrder()">Confirm Order</button>
-                </div>
+        <table border="1" aria-describedby="mydesc">
+            <thead>
+                <tr>
+                    <th scope="col">S.no</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">TotalPrice</th>
+                </tr>
+            </thead>
+            <tbody id="table">
+
+            </tbody>
+        </table>
+        <button class="btn btn-primary" onclick="confirmOrder()">Confirm Order</button>
+    </div>
 
 
-    <footer id="footer"></footer>
+    <!-- <footer id="footer"></footer> -->
 
     <script src="assets/js/jquery.min.js"></script>
     <script>
@@ -53,42 +55,35 @@
         document.querySelector("#email").innerHTML = emailadd;
     </script>
 
-    
+
     <script>
-        function tabledatas()
-        {
-            let addcart = JSON.parse(localStorage.getItem("CART_ITEMS"))  || [];
+        function tabledatas() {
+            let addcart = JSON.parse(localStorage.getItem("CART_ITEMS")) || [];
             console.log("addcart", addcart);
 
-        let tablearr = "";
+            let tablearr = "";
 
-        let i=0;
-        
-        for(let addcartobj of addcart)
-        {
-            if(addcartobj.product != null && addcartobj.qty != null && addcartobj.price != null)
-            {
-                // tablearr =tablearr +  "<tr><td>"+ (++i) +"</td><td>"+addcartobj.product +"</td><td>"+ addcartobj.qty +"</td><td>"+ addcartobj.price +"</td></tr>";
-                tablearr = tablearr + `<tr><td>${++i}</td><td>${addcartobj.product}</td><td><input min="1" id = "qty_${addcartobj.product}" type="number" maxlength="5" onchange="addItemToCart('${addcartobj.product}',${addcartobj.price})" value="${addcartobj.qty}"></td><td>${addcartobj.price}</td><td>${addcartobj.totalPrice}</td></tr>`;
+            let i = 0;
+
+            for (let addcartobj of addcart) {
+                if (addcartobj.product != null && addcartobj.qty != null && addcartobj.price != null) {
+                    tablearr = tablearr + `<tr><td>${++i}</td><td>${addcartobj.product}</td><td><input min="1" id = "qty_${addcartobj.product}" type="number" maxlength="5" onchange="addItemToCart('${addcartobj.product}',${addcartobj.price})" value="${addcartobj.qty}"></td><td>${addcartobj.price}</td><td>${addcartobj.totalPrice}</td></tr>`;
+                }
             }
-        }
 
-        document.querySelector("#table").innerHTML = tablearr;
-
-        // console.table(tablearr);
+            document.querySelector("#table").innerHTML = tablearr;
         }
-        
         tabledatas();
 
 
-        function addItemToCart(productName, price){
+        function addItemToCart(productName, price) {
             let qty = parseInt(document.querySelector("#qty_" + productName).value);
-            console.log("Entered qty:"+ qty);
-            if(qty > 0){
-            cartObj.addItem(productName,  price, qty);
-            tabledatas();
+            console.log("Entered qty:" + qty);
+            if (qty > 0) {
+                cartObj.addItem(productName, price, qty);
+                tabledatas();
             }
-            else{
+            else {
                 alert("Invalid Qty");
             }
         }
@@ -97,21 +92,19 @@
 
 
     <script>
-        function confirmOrder()
-        {
-         if(emailadd === "" || emailadd === null || emailadd === undefined)
-         {
-            alert("Please Register or Login");
-            window.location.href = "register.html";
-         }   
-         else
-         {
-            alert("Ordered Successfully");
-            document.location.reload(true);
-            window.localStorage.clear(true);
-         }
+        function confirmOrder() {
+            if (emailadd === "" || emailadd === null || emailadd === undefined) {
+                alert("Please Register or Login");
+                window.location.href = "register.html";
+            }
+            else {
+                alert("Ordered Successfully");
+                document.location.reload();
+                window.localStorage.clear();
+            }
         }
     </script>
 
 </body>
+
 </html>

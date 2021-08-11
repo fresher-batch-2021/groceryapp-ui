@@ -9,10 +9,10 @@ function login() {
   console.log(email);
   console.log(password);
 
-  if (email === null || email === "" || email.trim === "" || email === undefined) {
+  if (email === null || email === "" || email.trim() === "" || email === undefined) {
     alert("Enter email address");
   }
-  else if (password === null || password === "" || password.trim === "" || password === undefined) {
+  else if (password === null || password === "" || password.trim() === "" || password === undefined) {
     alert("Enter password");
   }
   else if (password.length <= 8 && password.length >= 6) {
