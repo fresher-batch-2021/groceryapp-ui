@@ -36,7 +36,7 @@ class CartService {
             //new product item added to cart
             let qty = 1;
             let totalPrice = qty * price;
-            productObj = { product: productName, qty: qty, price: price, totalPrice: totalPrice };
+            productObj = { productPrice : productPrice, productName : productName, productQty : productQty, productPrice : productPrice, totalPrice : totalPrice };
             cartItems.push(productObj);
         }
 
@@ -47,6 +47,7 @@ class CartService {
 
     emptyCart() {
         localStorage.removeItem("CART_ITEMS");
+        document.location.reload();
     }
 
     getTotalAmount() {
@@ -61,5 +62,6 @@ class CartService {
     static addQty(productName, productQty, productPrice) {
     }
 }
+
 
 cartObj = new CartService();

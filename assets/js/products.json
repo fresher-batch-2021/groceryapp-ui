@@ -9,7 +9,7 @@
     ]
     ,
     "Cookies" :[
-        {"productName" : "Black Bourbon", "unit" : 1, "price" : 10, "imgUrl" : "cookies/bourbon.png", "type":"Pc"},
+        {"productName" : "Black and white Bourbon", "unit" : 1, "price" : 10, "imgUrl" : "cookies/bourbon.png", "type":"Pc"},
         {"productName" : "Happy Happy", "unit" : 1, "price" : 10, "imgUrl" : "cookies/happyhappy.png", "type":"Pc"},
         {"productName" : "Milk Sakthi", "unit" : 1, "price" : 10, "imgUrl" : "cookies/milksakthi.png", "type":"Pc"},
         {"productName" : "20-20", "unit" : 1, "price" : 10, "imgUrl" : "cookies/2020.png", "type":"Pc"},
