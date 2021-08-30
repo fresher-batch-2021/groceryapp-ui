@@ -86,3 +86,9 @@ sup
 {
     margin-top: 15px;
 }
+input:invalid {
+    border-color: red;
+}
+input:valid {
+    border-color: #B4D233;
+  }

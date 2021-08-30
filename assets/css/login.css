@@ -108,3 +108,9 @@ sup
 {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+input:invalid {
+  border-color: red;
+}
+input:valid {
+  border-color: #B4D233;
+}

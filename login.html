@@ -11,10 +11,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Login</title>
     <link rel="stylesheet" href="assets/css/login.css">
-    <script src="assets/js/login.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>        
 </head>
 
 <body>
@@ -34,13 +34,15 @@
                 <div class="form-group">
                     <label for="email">Email <sup>*</sup></label>
                     <input class="form-control" type="email" name="email" id="email" autofocus
-                        placeholder="Enter email address" autocomplete="off" required>
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter email address"
+                        autocomplete="off" required>
                 </div>
 
                 <div class="form-group">
                     <label for="password">Password <sup>*</sup></label>
                     <input class="form-control" type="password" name="password" id="password"
-                        placeholder="Enter password" autocomplete="off" required>
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,8}" placeholder="Enter password" autocomplete="off"
+                        required>
                 </div>
 
                 <div class="text-center">
@@ -60,6 +62,8 @@
             </form>
         </main>
     </div>
+    <script src="assets/js/authService.js"></script>
+    <script src="assets/js/login.js"></script>
 </body>
 
 </html>

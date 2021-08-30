@@ -34,25 +34,26 @@
                 <div class="form-group">
                     <label for="username">UserName <sup>*</sup></label>
                     <input class="form-control" type="text" name="username" id="username" placeholder="Enter name"
-                        autofocus autocomplete="off" required>
+                        pattern="[A-Za-z]{1,15}" autofocus autocomplete="off" required>
                 </div>
 
                 <div class="form-group">
                     <label for="phone">Phone No <sup>*</sup></label>
                     <input class="form-control" type="tel" name="phoneno" id="phoneno" placeholder="Enter phone no"
-                        maxlength="10" minlength="10" autocomplete="off" required>
+                        pattern="[0-9]{10,10}" maxlength="10" minlength="10" autocomplete="off" required>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email <sup>*</sup></label>
                     <input class="form-control" type="email" name="email" id="email" placeholder="Enter email address"
-                        autocomplete="off" required>
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" autocomplete="off" required>
                 </div>
 
                 <div class="form-group">
                     <label for="psw">Password <sup>*</sup></label>
                     <input class="form-control" type="password" name="password" id="password"
-                        placeholder="Enter password" autocomplete="off" minlength="6" maxlength="8" required>
+                        placeholder="Enter password" autocomplete="off" minlength="6" maxlength="8"
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,8}" required>
                 </div>
 
                 <div class="text-center reg">

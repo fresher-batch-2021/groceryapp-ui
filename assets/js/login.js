@@ -17,23 +17,26 @@ function login() {
   }
   else if (password.length <= 8 && password.length >= 6) {
 
-    const logindata =
-    {
-      "email": email.toLowerCase(),
-      "password": password,
-      // "remember": rem
-    }
-    console.log("login data", logindata);
 
-    const url = "https://product-mock-api.herokuapp.com/groceryapp/api/v1/auth/login";
-    axios.post(url, logindata).then(res => {
+    // console.log("login data", logindata);
+
+    // const url = "https://product-mock-api.herokuapp.com/groceryapp/api/v1/auth/login";
+    authService.userLogin(email, password).then( res => {
+    // axios.post(url, logindata).then(res => {
       console.log("res", res);
-      const userLogin = res;
+      const userLogin = res.data.docs;
       console.log("userlogin", userLogin);
 
+      if(userLogin.length == 1)
+      {
       window.location.href = "home.html";
       alert("Login Successfully");
       localStorage.setItem("emailaddress", email.toLowerCase());
+      }
+      else
+      {
+        alert("Invalid Email or Password");
+      }
 
     }).catch(err => {
       console.log("error", err);
